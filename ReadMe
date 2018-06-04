@@ -1,0 +1,24 @@
+This app will get an array of depth data from a single frame.
+
+This is running on my laptop using Ubuntu 16.04
+
+https://structure.io/support/what-are-the-structure-sensors-technical-specifications
+
+The frame height is 240
+The frame width is 320
+
+Resolution:  VGA (640x480)
+             QVGA (320x240)
+
+Framerate:  30/60 fps
+
+Range: 40cm to 3.5m
+
+Precision:  0.5mm at 40cm (0.15%)
+            30mm at 3m (1%)
+http://io.structure.assets.s3.amazonaws.com/structure_sensor_precision.pdf
+
+Field of View:  Horizontal 58 degrees
+                Vertical  45 degrees
+
+Illumination:  Infrared structured light projector, uniform infrared LEDs
