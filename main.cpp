@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string>
 #include <time.h>
 #include <OpenNI.h>
 
@@ -8,8 +10,10 @@
 
 using namespace openni;
 
-int main()
+int main(int argc, const char *argv[])
 {
+
+//printf("argv0 %s, argv1 %s\n", argv[0], argv[1]);
 	Status rc = OpenNI::initialize();
 //printf("OpenNI::initialize() rc = %d\n",rc);
 	if (rc != STATUS_OK)
@@ -20,8 +24,17 @@ int main()
 //		printf("Initialize not failed\n%s\n", OpenNI::getExtendedError());
 
 	Device device;
-//	rc = device.open(ANY_DEVICE);
-	rc = device.open("myFrameStream");       
+	if (argc > 1)
+	{
+		const char *myDir="RecordedScans/";
+		char myPath[100];
+		strcpy(myPath,myDir);
+		strcat(myPath,argv[1]);
+
+		rc = device.open(myPath);
+	}
+	rc = device.open(ANY_DEVICE);
+      
 //printf("device.open(ANY_DEVICE) rc = %d\n",rc);
 
 	if (rc != STATUS_OK)
@@ -52,7 +65,7 @@ int main()
 	}
 
 //	Recorder recorder;
-//	recorder.create("myFrameStream");
+//	recorder.create("RecordedScans/myFrameStream");
 //	recorder.attach(depth);
 //	recorder.start();
 
