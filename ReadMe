@@ -1,5 +1,10 @@
 This app will get an array of depth data from a single frame.
 
+The base code was downloaded from here:
+https://s3.amazonaws.com/com.occipital.openni/OpenNI-Linux-x64-2.2.0.33.tar.bz2
+I modified the SimpleRead Makefile and created the main.cpp file.  The other files in this repository are from above download.
+I'll probably add a folder with recorded scans to be used instead of the scanner for testing code.
+
 This is running on my laptop using Ubuntu 16.04
 
 https://structure.io/support/what-are-the-structure-sensors-technical-specifications
